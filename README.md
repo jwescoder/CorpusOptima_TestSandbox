@@ -1,0 +1,2 @@
+# CorpusOptima_TestSandbox
+A repository of mostly toy samples containing the pre-optimized, basic code for mass scraping of drug repositioning-related text sources (e.g. abstracts or DrugBank data); demonstrates core functions of optimized code e.g. server requests, HTML parsing, string and list processing, basic delimiter declarations, and corpus creation and persistency. Note that the code samples here apply to non-structured abstracts as the more detailed code for structured + non-structured abstracts was developed later.
