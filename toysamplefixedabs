@@ -1,0 +1,17 @@
+from bs4 import BeautifulSoup
+import urllib.request
+import nltk, string
+import os
+fixedabs = urllib.request.urlopen('https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=11748932,11700095,28686433&retmode=xml').read()
+soup = BeautifulSoup(fixedabs, "lxml")
+abstracts = str((soup.find_all('abstracttext')))
+abstracts = abstracts.replace('[<abstracttext>','').replace('</abstracttext>]','')
+abstractsdoclist = abstracts.split('</abstracttext>, <abstracttext>')
+#print(abstractsdoclist)
+abstractsdoclisttostring = str(abstractsdoclist)
+f = open('C:\\Users\\Wescom~1\\Pythontestsaveddocs\\fixedabslisttostringsavetest.txt', 'w')
+simplejson.dump(abstractsdoclisttostring, f)
+f.close()
+with open('C:\\Users\\Wescom~1\\Pythontestsaveddocs\\fixedabslisttostringsavetest.txt') as f: fc = simplejson.load(f)
+print(fc)
+print(type(fc))
